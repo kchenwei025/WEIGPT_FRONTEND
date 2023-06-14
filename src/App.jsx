@@ -38,7 +38,10 @@ const App = () => {
         headers: { "Content-Type": "application/json" },
       };
       try {
-        const response = await fetch("http://localhost:8000/post", options);
+        const response = await fetch(
+          "https://api.openai.com/v1/chat/post",
+          options
+        );
         const data = await response.json();
         console.log(data);
       } catch (error) {
@@ -55,7 +58,10 @@ const App = () => {
         headers: { "Content-Type": "application/json" },
       };
       try {
-        const response = await fetch("http://localhost:8000/post", options2);
+        const response = await fetch(
+          "https://api.openai.com/v1/chat/post",
+          options2
+        );
         const data = await response.json();
         console.log(data);
       } catch (error) {
@@ -155,7 +161,7 @@ const App = () => {
     };
     try {
       const response = await fetch(
-        "http://localhost:8000/completions",
+        "https://api.openai.com/v1/chat/completions",
         options
       );
       const data = await response.json();
@@ -221,7 +227,7 @@ const App = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("http://localhost:8000/post");
+        const response = await fetch("https://api.openai.com/v1/chat/post");
         if (response.ok) {
           const data = await response.json();
           setPosts(data);

@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  background-color: #343541;
+  display: flex;
+}
+
+.side-bar {
+  background-color: #202123;
+  height: 100vh;
+  width: 244px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+button {
+  position: relative;
+  border: solid 0.5px rgba(255, 255, 255);
+  background-color: transparent;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  padding: 10px;
+}
+
+button::before,
+button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: transform 0.01s;
+}
+
+button::before {
+  background-color: rgba(69, 63, 63, 0.3);
+  transform: scale(0);
+}
+
+button::after {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(0);
+}
+
+button:hover::before,
+button:hover::after {
+  transform: scale(1);
+}
+
+nav {
+  border-top: solid 0.5px rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.history {
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.history li {
+  list-style-type: none;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.info {
+  color: rgba(255, 255, 255, 0.5px);
+  font-size: 11px;
+  padding: 5px;
+}
+
+.bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+}
+
+input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 12px 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px, rgba(0, 0, 0, 0.05) 0 -12px 30px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px, rgba(0, 0, 0, 0.05) 0 12px 3px,
+    rgba(0, 0, 0, 0.05) 0 -3px 5px;
+}
+
+/* input:focus {
+  outline: none;
+} */
+
+#submit {
+  font-size: 26px;
+  position: absolute;
+  bottom: 55px;
+  right: -37px;
+  cursor: pointer;
+  padding: revert;
+}
+.illuminate-on-hover:hover {
+  border: 2px solid #202123;
+  filter: brightness(200%);
+  transition: filter 0.3s ease-in-out;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.feed {
+  flex-grow: 1; /* The feed will grow to fill the remaining space */
+  overflow-y: auto; /* Enable vertical scrolling for the feed */
+  width: 100%;
+  padding: 0;
+}
+
+.feed li {
+  display: flex;
+  background-color: #444654;
+  align-items: center;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.feed p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  text-align: left;
+}
+
+.feed p.role {
+  min-width: 100px;
+}
+
+.tutorial {
+  position: relative;
+  width: 200px;
+  height: 5px;
+  transition: opacity 1s ease, width 1s ease, height 1s ease;
+  overflow: hidden;
+}
+
+.tutorial::before,
+.tutorial::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: opacity 1s ease, width 1s ease, height 1s ease;
+}
+
+.tutorial::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.tutorial:hover::before {
+  opacity: 1;
+}
+
+.tutorial:hover {
+  border: 2px solid;
+  padding: 10px;
+  width: 300px;
+  height: 3000px;
+}

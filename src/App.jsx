@@ -39,7 +39,7 @@ const App = () => {
       };
       try {
         const response = await fetch(
-          "https://api.openai.com/v1/chat/post",
+          "https://backend-b6uu.onrender.com/post",
           options
         );
         const data = await response.json();
@@ -59,7 +59,7 @@ const App = () => {
       };
       try {
         const response = await fetch(
-          "https://api.openai.com/v1/chat/post",
+          "https://backend-b6uu.onrender.com/post",
           options2
         );
         const data = await response.json();
@@ -161,7 +161,7 @@ const App = () => {
     };
     try {
       const response = await fetch(
-        "https://api.openai.com/v1/chat/completions",
+        "https://backend-b6uu.onrender.com/completions",
         options
       );
       const data = await response.json();
@@ -227,7 +227,7 @@ const App = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch("https://api.openai.com/v1/chat/post");
+        const response = await fetch("https://backend-b6uu.onrender.com/post");
         if (response.ok) {
           const data = await response.json();
           setPosts(data);

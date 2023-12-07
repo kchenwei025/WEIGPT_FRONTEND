@@ -94,7 +94,7 @@ const App = () => {
 
   useEffect(() => {
     if (posts) {
-      console.log(posts);
+      // console.log(posts);
     }
   }, [posts]);
 

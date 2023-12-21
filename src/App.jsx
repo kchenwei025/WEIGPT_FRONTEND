@@ -94,7 +94,7 @@ const App = () => {
 
   useEffect(() => {
     if (posts) {
-      console.log(posts);
+      // console.log(posts);
     }
   }, [posts]);
 
@@ -187,9 +187,9 @@ const App = () => {
     console.log(
       "this is Tile: ",
       title,
-      "/////////this is renderValue: ",
+      "this is renderValue: ",
       renderValue,
-      "//////////this is message: ",
+      "this is message: ",
       message
     );
     if (!title && renderValue && message) {
@@ -283,15 +283,17 @@ const App = () => {
         <button onClick={darkMode}>Death Fact AI</button>
 
         <nav>
-          <p> Made by Wei Chen</p>
+          <p className="font-bold border-4 border-black"> Made by Wei Chen</p>
         </nav>
       </section>
 
       <section className="main">
         {!title && <h1>Welcome to WeiChatGPT</h1>}
-        <p>Hover here to see intruction</p>
+        <p className="font-bold">Hover below to see intruction</p>
         <div className="tutorial">
-          <p>1. ChatRoom(teal): Guess who is AI with other users</p>
+          <p className="font-bold">
+            1. ChatRoom(teal): Guess who is AI with other users
+          </p>
           <p>2. Army AI(green) :Tell Army Facts </p>{" "}
           <p>3. Career AI(yellow) :Guide job seaching Facts</p>
           <p>4. Dark mode AI(black): Tell death Facts</p>

@@ -288,7 +288,7 @@ const App = () => {
       </section>
 
       <section className="main">
-        {!title && <h1>Welcome to WeiChatGPT</h1>}
+        {!title && <h1>WeiChatGPT</h1>}
         <p className="font-bold">Hover below to see intruction</p>
         <div className="tutorial">
           <p className="font-bold">

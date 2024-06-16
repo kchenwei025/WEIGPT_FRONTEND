@@ -108,34 +108,46 @@ nav {
 }
 
 .input-container {
-  position: relative;
   width: 100%;
   max-width: 650px;
 }
 
+.input-form {
+  display: flex;
+  align-items: center;
+}
+
 input {
-  width: 100%;
+  flex-grow: 1;
   border: none;
   background-color: rgba(255, 255, 255, 0.05);
   padding: 12px 15px;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px, rgba(0, 0, 0, 0.05) 0 -12px 30px,
     rgba(0, 0, 0, 0.05) 0 4px 6px, rgba(0, 0, 0, 0.05) 0 12px 3px,
     rgba(0, 0, 0, 0.05) 0 -3px 5px;
+  height: 44px;
+  box-sizing: border-box;
 }
-
-/* input:focus {
-  outline: none;
-} */
 
 #submit {
   font-size: 26px;
-  position: absolute;
-  bottom: 55px;
-  right: -37px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
   cursor: pointer;
-  padding: revert;
+  padding: 0 15px;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 54px 55px, rgba(0, 0, 0, 0.05) 0 -12px 30px,
+    rgba(0, 0, 0, 0.05) 0 4px 6px, rgba(0, 0, 0, 0.05) 0 12px 3px,
+    rgba(0, 0, 0, 0.05) 0 -3px 5px;
+  height: 44px;
+  box-sizing: border-box;
+  margin: 0;
 }
+
 .illuminate-on-hover:hover {
   border: 2px solid #202123;
   filter: brightness(200%);
@@ -144,8 +156,8 @@ input {
 }
 
 .feed {
-  flex-grow: 1; /* The feed will grow to fill the remaining space */
-  overflow-y: auto; /* Enable vertical scrolling for the feed */
+  flex-grow: 1;
+  overflow-y: auto;
   width: 100%;
   padding: 0;
 }
@@ -189,7 +201,6 @@ input {
 
 .tutorial::before {
   background-color: rgba(0, 0, 0, 0.5);
-
   opacity: 120;
 }
 

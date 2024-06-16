@@ -14,6 +14,8 @@ const App = () => {
   const [chatRoomStatus, setChatRoomStatus] = useState(false);
   const [posts, setPosts] = useState([]);
   const [guessCorrect, setGuessCorrect] = useState([]);
+  const [immuneJokerColor, setImmuneJokerColor] = useState(false);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
 
   const createNewChat = () => {
     setMessage(null);
@@ -84,19 +86,13 @@ const App = () => {
       setChatRoomStatus(false);
     } else {
       setBackStory(
-        "You are in group chat envirmont to have causal coversation, you always response with one sentence."
+        "You are a anatomy and physiology teacher who also has been a massage therapist for over 20 years, you say fuck, motherfucker, fucking and other swearing words a lot but you don't want to offend anybody"
       );
       mainElement.style.backgroundColor = "teal";
       SetChatRoomColor(true);
       setChatRoomStatus(true);
     }
   };
-
-  useEffect(() => {
-    if (posts) {
-      // console.log(posts);
-    }
-  }, [posts]);
 
   const armyFact = () => {
     const mainElement = document.querySelector(".main");
@@ -123,7 +119,7 @@ const App = () => {
       setCareerColor(false);
     } else {
       setBackStory(
-        "You are an assistant who guides people to find a software related jobs espcially bootcamp graduates. You have been work for HR depart for over 30 years, you know everything there is to know about resume, cover letter ,and tech interview. You always provide positive feedback and informative new and posting"
+        "You are a anatomy and physiology teacher who also has been a massage therapist for over 20 years, you say fuck, motherfucker, fucking and other swearing words a lot but you don't want to offend anybody"
       );
       mainElement.style.backgroundColor = "DarkKhaki";
       setCareerColor(true);
@@ -149,6 +145,32 @@ const App = () => {
 
     console.log("clicked");
   };
+
+  const immuneJoker = () => {
+    const mainElement = document.querySelector(".main");
+
+    if (immuneJokerColor) {
+      setBackStory("");
+      mainElement.style.backgroundColor = "";
+      setImmuneJokerColor(false);
+    } else {
+      setBackStory(
+        "You are an assistant who answers every question with a funny immune system joke."
+      );
+      mainElement.style.backgroundColor = "LightCyan";
+      setImmuneJokerColor(true);
+    }
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
+
+  useEffect(() => {
+    if (posts) {
+      // console.log(posts);
+    }
+  }, [posts]);
 
   const getMessages = async () => {
     const options = {
@@ -268,26 +290,32 @@ const App = () => {
 
   return (
     <div className="app">
-      <section className="side-bar">
-        <button onClick={createNewChat}>+ New Chat</button>
-        <ul className="history">
-          {uniqueTitle?.map((uniqueTitle, index) => (
-            <li key={index} onClick={() => handleClick(uniqueTitle)}>
-              {uniqueTitle}
-            </li>
-          ))}
-        </ul>
-        <button onClick={chatRoom}>ChatRoom Who is AI</button>
-        <button onClick={armyFact}>Army Facts AI</button>
-        <button onClick={careerFact}>Career Services AI</button>
-        <button onClick={darkMode}>Death Fact AI</button>
+      <section className="top-bar"></section>
+      {isSidebarVisible && (
+        <section className="side-bar">
+          <button onClick={createNewChat}>+ New Chat</button>
+          <ul className="history">
+            {uniqueTitle?.map((uniqueTitle, index) => (
+              <li key={index} onClick={() => handleClick(uniqueTitle)}>
+                {uniqueTitle}
+              </li>
+            ))}
+          </ul>
+          <button onClick={chatRoom}>ChatRoom Who is AI</button>
+          <button onClick={armyFact}>Army Facts AI</button>
+          <button onClick={careerFact}>Craig mode</button>
+          <button onClick={darkMode}>Death Fact AI</button>
+          <button onClick={immuneJoker}>Immune System Joker</button>
 
-        <nav>
-          <p className="font-bold border-4 border-black"> Made by Wei Chen</p>
-        </nav>
-      </section>
-
+          <nav>
+            <p className="font-bold border-4 border-black"> Made by Wei Chen</p>
+          </nav>
+        </section>
+      )}
       <section className="main">
+        <button className="Hidesidebarbutton" onClick={toggleSidebar}>
+          {isSidebarVisible ? "Hide Sidebar" : "Show Sidebar"}
+        </button>
         {!title && <h1>WeiChatGPT</h1>}
 
         <ul className="feed">

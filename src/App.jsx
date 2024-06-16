@@ -289,16 +289,7 @@ const App = () => {
 
       <section className="main">
         {!title && <h1>WeiChatGPT</h1>}
-        <p className="font-bold">Hover below to see intruction</p>
-        <div className="tutorial">
-          <p className="font-bold">
-            1. ChatRoom(teal): Guess who is AI with other users
-          </p>
-          <p>2. Army AI(green) :Tell Army Facts </p>{" "}
-          <p>3. Career AI(yellow) :Guide job seaching Facts</p>
-          <p>4. Dark mode AI(black): Tell death Facts</p>
-          <p>Click selected AI to switch back to normal AI</p>
-        </div>
+
         <ul className="feed">
           {!chatRoomStatus
             ? currentchat.map((ChatMessage, index) => (
@@ -345,17 +336,15 @@ const App = () => {
 
         <div className="bottom-section">
           <div className="input-container">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="input-form">
               <input value={value} onChange={(e) => setValue(e.target.value)} />
+
               <button id="submit" type="submit" className="illuminate-on-hover">
                 ➢
               </button>
             </form>
 
-            <p className="info">
-              Free Research Preview. ChatGPT may produce inaccurate information
-              about people, places, or facts. ChatGPT May 24 Version
-            </p>
+            <p className="info"></p>
           </div>
         </div>
       </section>

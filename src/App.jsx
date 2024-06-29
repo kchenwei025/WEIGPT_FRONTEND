@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const App = () => {
   const [value, setValue] = useState("");
@@ -16,6 +16,7 @@ const App = () => {
   const [guessCorrect, setGuessCorrect] = useState([]);
   const [immuneJokerColor, setImmuneJokerColor] = useState(false);
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const chatContainerRef = useRef(null); // Ref for the chat container
 
   const createNewChat = () => {
     setMessage(null);
@@ -73,6 +74,7 @@ const App = () => {
   };
 
   const chatRoom = () => {
+    setIsSidebarVisible(false);
     setMessage(null);
     setValue("");
     setTitle(null);
@@ -96,6 +98,7 @@ const App = () => {
 
   const armyFact = () => {
     const mainElement = document.querySelector(".main");
+    setIsSidebarVisible(false);
 
     if (armyColor) {
       setBackStory("");
@@ -112,6 +115,7 @@ const App = () => {
 
   const careerFact = () => {
     const mainElement = document.querySelector(".main");
+    setIsSidebarVisible(false);
 
     if (careerColor) {
       setBackStory("");
@@ -129,6 +133,7 @@ const App = () => {
   };
 
   const darkMode = () => {
+    setIsSidebarVisible(false);
     const mainElement = document.querySelector(".main");
 
     if (darkModeColor) {
@@ -147,6 +152,7 @@ const App = () => {
   };
 
   const immuneJoker = () => {
+    setIsSidebarVisible(false);
     const mainElement = document.querySelector(".main");
 
     if (immuneJokerColor) {
@@ -288,6 +294,14 @@ const App = () => {
     console.log(guessCorrect);
   };
 
+  // Scroll to bottom when new messages are added
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [previousChats, posts]);
+
   return (
     <div className="app">
       <section className="top-bar"></section>
@@ -312,7 +326,7 @@ const App = () => {
           </nav>
         </section>
       )}
-      <section className="main">
+      <section className="main" ref={chatContainerRef}>
         <button className="Hidesidebarbutton" onClick={toggleSidebar}>
           {isSidebarVisible ? "Hide Sidebar" : "Show Sidebar"}
         </button>

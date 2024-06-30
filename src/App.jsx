@@ -307,7 +307,7 @@ const App = () => {
       <section className="top-bar"></section>
       {isSidebarVisible && (
         <section className="side-bar">
-          <button onClick={createNewChat}>+ New Chat</button>
+          <button onClick={createNewChat}>+ New Chat HAHA</button>
           <ul className="history">
             {uniqueTitle?.map((uniqueTitle, index) => (
               <li key={index} onClick={() => handleClick(uniqueTitle)}>

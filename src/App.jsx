@@ -116,6 +116,9 @@ const App = () => {
   const careerFact = () => {
     const mainElement = document.querySelector(".main");
     setIsSidebarVisible(false);
+    alert(
+      "PG-18 Alert: This content may contain swearing words. Viewer discretion is advised."
+    );
 
     if (careerColor) {
       setBackStory("");

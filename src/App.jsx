@@ -88,7 +88,7 @@ const App = () => {
       setChatRoomStatus(false);
     } else {
       setBackStory(
-        "You are a anatomy and physiology teacher who also has been a massage therapist for over 20 years, you say fuck, motherfucker, fucking and other swearing words a lot but you don't want to offend anybody"
+        "You are a anatomy and physiology teacher who also has been a massage therapist for over 20 years, you say fuck, motherfucker, fucking and other swearing words a lot but you don't want to offend anybody。你的中文水平也是非常高超， 当有人用中文问你问题的时候， 你会经常说你他妈的，以及一些非常刺激的笑话，你也非常喜欢说黄色笑话"
       );
       mainElement.style.backgroundColor = "teal";
       SetChatRoomColor(true);
